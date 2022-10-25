@@ -1,0 +1,189 @@
+Day-01[25-10-2022]:
+===================
+	Good Morning to All..
+
+	Python Basics:
+	==============
+		- Variables, assgining of values in different ways
+		- Input and Output
+		- Conditional statements
+			- if
+			- if-else
+			- nested if
+			- elif
+		- Loops
+			- for
+			- while
+		- Jumping Statements
+			- break
+			- continue
+			- pass
+			- return
+		- Inner Loops
+		- Functions
+			Syntax:
+				def functionname(arguments):
+					//stmnts
+					return return_value
+
+			- predefined 
+			- user defined
+
+			User Defined:
+			============
+				- with returntype and with arguments
+					Reading => Main
+					Printing => Main
+					Logic => Function
+				- with returntype and without arguments
+					Reading => Function
+					Printing => Main
+					Logic => Function
+				- without returntype and with arguments
+				    Reading => Main
+				    Printing => Function
+				    Logic => Function
+				- without returntype and without arguments
+				    Reading => Function
+				    Printing => Function
+				    Logic => Function
+		- Function argument types
+			- Default
+			- Keyword
+			- Required or Positional
+			- Variable Length
+		- Packages and Modules
+			Packages:
+				- Collection of subpackages and Modules
+			Module:
+				- Collection of variables,functions,class,object or methods
+	
+
+		Django Prerequisite Softwares:
+		==============================
+			- Python
+			- db browser
+			- sublime
+
+		Python Downloads:
+		=================
+		- First open browser and navigate to "python.org" site in that we can observer "Downloads" then we need to place a cursor on it then it displays with some options such as to select the operating system what we are using in local machine
+		- After selecting the operating system then we can observe 2 columns i.e.,
+			- stable release [Completely Developed] 
+			- pre release [Not developed fully its for developer purpose]
+		- We need to select stable release files in that we need to download particular version such as like python 3.7 etc., then we need to use "cntrl + f" for searching the version of it
+		- If we need python then we need to type python 3.7 then it automatically navigates to the location where it exists. We need to choose from stable release side in that it displays number of options such as
+			- help file
+			- embedded zip file
+			- executeable installer
+			- web based installer
+		- In those options we need to download "executeable installer" because windows prefer to install only ".exe" file extensions
+		- Automatically it downloads the python in your downloads folder.
+
+		Python Installation:
+		====================
+		- After Downloads then we need to double tap on the executeable file then it appears a window for accepting the installations from a user. Click on "yes" for installations
+		- It displays a window with 2 options and 2 checkboxes
+			-> 2 options
+				- install now [Default path]
+				- custom installation [User Defined Folder location path]
+			-> 2 checkboxes
+				- All user
+				- Add python for path
+		- We need to select those 2 checkboxes and need to select "install now" then it automatically installs in the default location.
+
+		Python Version Check:
+		=====================
+		- Open command prompt and type the command for checking the python is installed in a system or not?
+			=> python -V
+						or
+			=> python --version
+
+		If the comand prompt doesnt access Python?
+			=> python is not installed
+			=> It has 2 or more version of python is installed
+			=> Python installed but the path is not set to environment variable path
+			=> Using of Anaconda Navigator
+
+		Pip:
+		====
+			=> To install third party packages we need to use pip command
+
+		Pip Version Check:
+		==================
+		- Open command prompt and then we need to type the command such as
+			=> pip -V
+
+		Upgrading pip:
+		==============
+		- Open command prompt and then type the command for version upgrade to a pip
+			=> python -m pip install --upgrade pip
+
+
+		Django installation:
+		====================
+		- Open command prompt and then type the command to install a django framework
+			=> pip install django==3.x
+						or
+			=> pip install django [It installs updated version]
+
+		Django Version Check:
+		=====================
+		- Open command prompt and then try to check whether the django is installed in your machine or not by using the command such as
+			=> django-admin --version
+
+		Project Creation:
+		=================
+		- Create a folder in any location of a drive then open particular path location by using command prompt. After navigating to the path then we need to create a project by using the command such as
+			=> django-admin startproject "projectname"
+
+			Ex:
+			   django-admin startproject SampleProject
+		- Inside of the project folder it creates a same folder name as project folder and with a file such as "manage.py"
+			=> SampleProject => [Project Folder]
+				=> SampleProject [Admin App]
+				=> manage.py [Services file]
+
+		Admin App Files Overview:
+		=========================
+		- In Admin app i.e., inside of proejct folder we can observe same folder it states to a admin app in that it consists of some files such as
+			- init => It also considered as a python file
+			- asgi => Asynchronous Gateway Interface [Deployment]
+			- wsgi => Web server Gateway Interface [Deployment]
+			- settings => All configurations such as mail,app,database,.html,.css etc., are configured in this settings file
+			- urls => To check the url action what it has to do
+
+		Execution of a project:
+		=======================
+		- Open command prompt where the manage.py file exists then we need to run a project then we need to use the command such as
+			=> manage.py runserver
+						or
+			=> python manage.py runserver
+		- It will runs a server with defalt host number and port number such as like "http://127.0.0.1:8000"
+		- We need to pass the url name and port number in browser then the default page will be displayed in a browser
+
+		UserApp Creation:
+		=================
+		- Navigate to a location where manage.py file exists then navigate to the path through command prompt then we need to type hte command such as
+			=> manage.py startapp "appname"
+						or
+			=> django-admin startapp "appname"
+			Ex:
+			   manage.py startapp StartApp
+
+		UserApp Files Overview:
+		=======================
+		- init => It also considered as a python file
+		- admin => For user table access we need to configure here to display for an admin
+		- apps => In this app configurations are done for an app
+		- models => Talble creation and some methods related to tables
+		- tests => It can be used on testing purposes of a project such as "blackbox" and "whitebox"
+		- views => Business Logic is to be implemented in this file
+
+		Architecture of Django:
+		=======================
+		- Django Follows MVT desing pattern here MVT means model,view and template
+		- Main controller in Django is urls and views [these are views]
+		- In template the data can't display directly we need to use DTL Language [Django Template Language]
+		- Model means related to Database like creating table,renaming and filed names to a table etc.,
+
