@@ -146,7 +146,7 @@ Day-01[25-10-2022]:
 
 		Admin App Files Overview:
 		=========================
-		- In Admin app i.e., inside of proejct folder we can observe same folder it states to a admin app in that it consists of some files such as
+		- In Admin app i.e., inside of prject folder we can observe same folder it states to a admin app in that it consists of some files such as
 			- init => It also considered as a python file
 			- asgi => Asynchronous Gateway Interface [Deployment]
 			- wsgi => Web server Gateway Interface [Deployment]
@@ -159,7 +159,7 @@ Day-01[25-10-2022]:
 			=> manage.py runserver
 						or
 			=> python manage.py runserver
-		- It will runs a server with defalt host number and port number such as like "http://127.0.0.1:8000"
+		- It will runs a server with default host number and port number such as like "http://127.0.0.1:8000"
 		- We need to pass the url name and port number in browser then the default page will be displayed in a browser
 
 		UserApp Creation:
@@ -169,7 +169,7 @@ Day-01[25-10-2022]:
 						or
 			=> django-admin startapp "appname"
 			Ex:
-			   manage.py startapp StartApp
+			   manage.py startapp SampleApp
 
 		UserApp Files Overview:
 		=======================
