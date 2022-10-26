@@ -1,0 +1,82 @@
+Day-02[26-10-2022]:
+===================
+	Good Morning to All...
+
+	Packages and Modules:
+	=====================
+	Packages:
+	=========
+		Collection of subpackages or Modules
+	Modules:
+	========
+		Collection of variables,functions, classes or methods
+
+	How to access a package and modules?
+	====================================
+	- If we are creating a file in outside of fodler the nwe can access the another file by using module such as the importing statement will be
+		=> import modulename
+		=> modulename.variable or function or a class
+	- If we need to access a module inside of a folder then we need to import 
+		=> from packagename import modulename
+		=> modulename.variable or function or class
+	- If we need to access all modules then we need to use * it may be class or function or a module
+		=> import * => for all either it may be variable,class or function
+		=> from packagename import * => It access all modules
+		=> from packagename.modulename import * => It access all variables,functions or class
+		=> from packagename.modulename.class import * => It access all variables and methods inside a class
+	- If we need to access a module inside a subpackage then we need to import such as
+		=> from packagename.subpackagename import module
+		=> modulename.variable or class or a function or method
+	
+
+	UserApp Urls Running Procedure:
+	===============================
+	- First We need to configure our user app in settings.py file where "INSTALLED_APPS" variable exists 
+		INSTALLED_APPS = [
+			'.....',
+			'.....',
+			'userappname',
+			]
+	- After Configuring then we need to create an url path the url file can be exists in admin app. In url.py consists of urlpatterns variable name so there we need to create a user defined path to access user defined function
+		urlpatterns = [
+			path('admin/',admin.site.urls),
+			path('urlname/',modulename.functioname),
+			]
+	- In path we need to pass 3 parameters such as 
+		path('urlname',modulename.functioname,name="nameofurl"),
+		=> In path the first parameter can be accessed in a browser that is to be configured in a path
+		=> second parameter is modulename.functionname here we need to access a function what to display for a user
+		=> third parameter is used in linking of a user these can be used for redirecting to a page when a button is clicked
+	- After mentioning the path then we need to import the views that is existing in the userapp so the import will be
+		=> from appname import module
+		=> from SampleApp import views
+	- Then we need to implement a function that is to be mentioned in a urls of a path
+		Then the function will be coded as 
+			def functionname(self):
+				return returnvalue
+		=> Here the self or any variable is to be mentioned because the function will be executed as amethod instead of a class because the request is to be accessed from a user so it follows the default constructor type mechanism
+		=> To display something reponse to a user then we are importing a class i.e.,
+			** from django.http import HttpResponse
+			Here the HttpResponse is a class that returns a string to a browser
+	- After implementing the function then we need to run a server and try to check in a browser then we need to access the urlname such as
+		http://127.0.0.1:8000/urlname/
+		Here We can use 127.0.0.1 or else localhost
+		8000 is default port number for django project
+		urlname is mentioned in urlpattern of a path function that exists in a first paramter name
+	- Then it gives some response to a user that is mentioned in HttpResponse of a function in views.py file
+
+	Dynamic url mapping:
+	====================
+	- Here the values can be sent along with the urlname such as either it is in string data type or integer
+	- Then the url can be written as
+		path('urlname/<datatype:variablename>/',modulename.functionname),
+		Here we can asssign any data type either it may be string or integer then we can send those data type values to a function
+	- The value from a url can be redirect to a function then the data can be displayed by using HttpResponse while accessing a paramtere variablename
+		def functioname(self,variablename):
+			return HttpResponse("Something message {}".format(variablename))
+	- After creating the function then we need to send the values in url like
+		http://127.0.0.1:8000/urlname/value/
+		Then the value can be displayed in the browser based on HttpResponse created in views
+	- Similary we can pass n number of values to an url and that can be passed to a function and returns those values in browser based on HttpResponse
+
+	
