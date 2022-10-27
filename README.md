@@ -13,3 +13,9 @@
   - Introduction to Django,Advantages,Disadvantages,Applications of Django and History of Django
   - UserApp access with HttpResponse
   - HttpResponse with single parameter value with Dynamic Url Mapping
+
+## Day-03(27-10-2022):
+  - Django Templates
+  - Interface between a controller and a template
+  - Static File Handling like css,js and images
+  - Controller to template and then controller to another template
