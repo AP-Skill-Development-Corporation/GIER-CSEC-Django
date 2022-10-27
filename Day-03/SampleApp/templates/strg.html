@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student Registration</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/demo.css' %}">
+	<script type="text/javascript" src="{% static 'js/test.js' %}"></script>
+</head>
+<body>
+	<h3>Registration</h3>
+	<form>
+		<label>Roll Number: </label>
+		<input type="text" name=""><br/>
+		<label>Student Name: </label>
+		<input type="text" name=""><br/>
+		<label>Select Branch</label>
+		<select>
+			<option>--Select Your Branch--</option>
+			<option>CSE</option>
+			<option>ECE</option>
+			<option>EEE</option>
+			<option>MECH</option>
+			<option>CIVIL</option>
+		</select><br/>
+		<label>Year: </label>
+		<input type="number" name=""><br/>	
+		<input type="reset" value="Reset">
+		<input type="submit" value="Submit" style="float:right;margin-right:5%">		
+	</form>
+	<img src="{% static 'images/sa.png' %}">
+</body>
+</html>
+
+
+
+
+
+

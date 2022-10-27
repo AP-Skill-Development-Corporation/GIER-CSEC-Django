@@ -1,0 +1,35 @@
+Day-03[27-10-2022]:
+===================
+	Good Morning to All...
+
+	Django Templates:
+	=================
+	- We need to access only .html files then we need to create a folder with "templates" inside userapp then inside of templates we need to save only .html files
+	- After saving the files in templates we need to access in views then we need to user render function
+		render(self,'.html file location',{'key':value})
+	- If we access the url then it performs some action that is written in views then it displays the .html file content in browser
+	- To access a data from views then we need to follow the Template Language i.e.,
+		{{variablename}} => Template Language Variablename
+		=> This value can be accessed from the views by sending the data in dictionary format the value can be accessed by using the key name of a dictionary
+
+	Static File Handling:
+	=====================
+	- If we need to access the external file resources like css,js,jquery,images,audio or video file then we need to store those files in inside of static folder
+	- Static Folder is created within userapp with different fodlers like css,js,images or media for audio or video etc.,
+	- We need to access the css then we need to create a folder and then store stylings in a file with .css extension similary like javascript with .js and images like .png or .jpg or .jpeg or .svg etc.,
+	- To access the styling or image or validations from javascript then we need to load those folders to a .html file first step is to load those content to a specific file by template language
+		{% load static %}
+		It loads all the file extensions inside the static folder created inside userapp
+	- For css the static can be accessed as 
+		<link rel="stylesheet" type="text/css" href="{% static 'css/filename.css' %}"></link>
+		** If we need to access javascript then we need to access such as
+		<script src="{% static 'js/filename.js' %}"></script>
+		** If we need to access an image then the template language is
+		<img src="{% static 'images/filename.extension' %}">
+
+	Flow of execution:
+	==================
+	Interface between Controller and templates
+		url => views => templates
+	Controller to template and then templates to another template
+		url => views => template => views => another template

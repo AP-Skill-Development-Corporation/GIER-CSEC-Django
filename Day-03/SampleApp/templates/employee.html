@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>employee details</title>
+	<link rel="stylesheet" type="text/css" href="{% static  'css/employee.css' %}">
+</head>
+<body>
+  	<h3>Employee Details</h3>
+  	<form method="post">
+  		{% csrf_token %}
+  		<label>Ename</label>
+  		<input type="text" name="en"><br/>
+  		<label>Eid</label>
+  		<input type="text" name="ei"><br/>
+  		<label>Eage</label>
+  		<input type="number" name="ea"><br/>
+  		<input type="reset" value="Clear">
+  		<input type="submit" value="Create">
+  	</form>
+</body>
+</html>
