@@ -18,4 +18,4 @@
   - Django Templates
   - Interface between a controller and a template
   - Static File Handling like css,js and images
-  - Controller to template and then controller to another template
+  - Controller to template and then template to controller and controller to another template
