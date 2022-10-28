@@ -1,0 +1,147 @@
+Day-04[28-10-2022]:
+===================
+	Good Morning to All..
+	
+	Bootstrap 4 Overview:
+	=====================
+	- To display the webpage in responsive
+	- User Attractive and with good styling with predefined css and js
+	- For device scaling the page is to be either shrink or to enlarge
+	- To style more number of styling properties for a single tag
+
+	Grid System:
+	============
+	- To display the content in columns we are prefering to use grid system for all devices
+	- Device scaling for a responsive web pages are
+		=> very small -> xm or -> col
+		=> small -> sm
+		=> medium -> md
+		=> large -> lg
+		=> extra large -> xl
+	- Based on the scaling we need to prefer the columns size
+
+	Margin and Padding:
+	===================
+		- Margin => For all directions
+		- Padding => For all directions
+		- ml => margin left ** pl => padding left
+		- mr => margin right ** pr => padding right
+		- mb => margin bottom ** pb => padding bottom
+		- mt => margin top ** pt => padding top
+		- mx => margin right and left ** px => padding left and right
+		- my => margin top and bottom ** py => padding top and bottom
+
+	Colors in Bootstrap:
+	====================
+	- primary => blue
+	- success => green
+	- info => light blue
+	- danger => red
+	- warning => yellow
+	- light => white
+	- dark => black
+	- secondary => grey
+
+	ORM => Object Realtional Mapper:
+	================================
+	- By using objects we are trying to create,read,update and delete a record
+	- First we need to open a shell where the project is existing by using the manage.py file
+	- The command to run shell is
+		"manage.py shell"
+				or
+		"python manage.py shell"
+	- To perform CRUD Operations in a table then we need to import our class name it means a table name that is created in user app 
+		=> from appname.models import classname
+	- To display the fields of a class or table we need to use the command such as
+		=> print(classname.__doc__)
+	- Create:
+	=========
+		- To insert a record into a table we have 3 procedures those are
+			- save
+			- create
+			- bulk_create
+		save:
+		=====
+		=> objectname = classname(fieldname = "value",etc.,)
+		=> objectname.save()
+
+		create:
+		=======
+		=> objectname = classname.objects.create(fieldname="value",etc.,)
+
+		bulk_create:
+		============
+		=> objectname = classname.objects.bulk_create([
+			classname(fieldname="value"),
+			classname(fieldname="value"),
+		])
+	- Reading:
+	==========
+	- To read a data from a table it consists of different ways they are:
+		=> get
+		=> filter
+		=> slicing
+		=> first
+		=> last
+
+		get:
+		====
+		- To access onlu unique values then we need to prefer get if the data is not existing in the table then it displays an error
+			=> objectname = classname.objects.get(fieldname="value")
+
+		filter:
+		=======
+		- To access the duplicate or non duplicate it access all data but the data will nnot displays becuase it stores n values so we need to use loop for diplsying all records. If the reocrd value is not existing then it doesnt displays any error
+			=> objectname = classname.objects.filter(fieldname="value")
+
+		slicing:
+		========
+		- In slicing we can access a record in between a ranges but the negative slicing cant work in orm to access a data from a table
+			=> objectname = classname.objects.all()[start:stop]
+
+		first:
+		======
+		- It displays the first value in a table
+			=> objectname = classname.objects.all().first()
+
+		last:
+		=====
+		- It displays the last value in a table
+			=> objectname = classname.objects.all().last()
+
+	- Update:
+	=========
+	- If we need to edit any fieldname in a record then we need to update it and then we need to fix a value and have to use save() to update into a table
+		=> objectname = classname.objects.get(fieldname="value")
+		=> objectname.fieldname = "new value"
+		=> objectname.save()
+
+	- Delete:
+	=========
+	- To delete a record we can use it for get,filter and for all based on user requirement we can perform the operation
+		=> objectname = classname.objects.get(fieldname="value")
+		=> objectname.delete()
+		** It deletes only the value that is unique and exists in a table
+
+		=> objectname = classname.objects.filter(fieldname="value")
+		=> objectname.delete()
+		** It deletes if exists if not it doesnt displays any error
+
+		=> objectname = classname.objects.all()
+		=> objectname.delete()
+		** It deletes all the data exists in a table
+
+		We can use delete() in a single line while accessing the data
+		Ex:
+			objectname = classname.objects.all().delete()
+
+	Template language:
+	==================
+	- Variable
+		{{variablename}}
+	- Loops
+		{% for iterationvariablename in iterator %}
+			{{iterationvariablename.fieldname}}
+		{% endfor %}
+	- anchor tags
+		{% url 'third parameter in path' %}
