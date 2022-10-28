@@ -19,3 +19,10 @@
   - Interface between a controller and a template
   - Static File Handling like css,js and images
   - Controller to template and then template to controller and controller to another template
+
+## Day-04(28-10-2022):
+  - Bootstrap4 Overview
+  - Model Creation, makemigrations and migrate
+  - ORM Queries 
+  - CRUD Operations with sample example on each
+  
