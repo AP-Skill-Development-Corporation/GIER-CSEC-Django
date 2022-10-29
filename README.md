@@ -26,3 +26,8 @@
   - ORM Queries 
   - CRUD Operations with sample example on each
   
+## Day-05(29-10-2022):
+  - Template blocks
+  - Forms conept with widgets examples
+  - User Authentication and Autherisation
+  - Messages Concept and decorators with sample example on each
