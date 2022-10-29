@@ -1,0 +1,30 @@
+{% extends 'html/base.html' %}
+{% block content %}
+<div class="container mt-4">
+	<div class="card col-md-6 mx-auto shadow-lg">
+		<div class="card-body">
+			<h3>Login</h3>
+			{% if messages %}
+			{% for i in messages %}
+				<div class="alert alert-{{i.tags}} alert-dismissible">
+  					<button type="button" class="close" data-dismiss="alert">&times;</button>{{i}}
+				</div>
+			{% endfor %}
+			{% endif %}
+			<form method="post">
+				{% csrf_token %}
+				<input type="text" name="username" class="form-control my-2" placeholder="Username">
+				<input type="password" name="password" class="form-control my-2" placeholder="Password">
+				<div class="row">
+					<div class="col">
+						 <a href="{% url 'reg' %}" class="form-control btn btn-outline-primary">New User?</a>
+					</div>
+					<div class="col">
+						<input type="submit" value="Login" class="btn btn-outline-success form-control">
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock %}

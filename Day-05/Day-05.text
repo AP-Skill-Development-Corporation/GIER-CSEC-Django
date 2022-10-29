@@ -1,0 +1,84 @@
+Day-05[29-10-2022]:
+===================
+	Good Morning to All..
+
+	Template Blocks:
+	================
+	- {{variable}}
+	- {% load static %}
+	- {% url 'urlname' %}
+	- {% url 'urlname' iterationvariablename.fieldname %}
+	- {% block title %} value to display {% endblock %}
+	- {% block content %} Body {% endblock %}
+	- {% include '.htmlfile' %} => constant file for all .html files
+	- {% extends '.htmlfile ' %} => Default file to be opened before executing the present html file
+	- {% if condition %} Display content {% endif %}
+	- {% if condition %} True content {% else %} False content {% endif %}
+	- {% for iterationvariablename in iterator %}
+			{{iterationvariablename}}
+	  {% endfor %}
+
+	SuperUser Creation:
+	===================
+	- Open command prompt where manage.py exists then for first time we are not creating any table for user defined. We need to use the command to create an existing tables the command is
+		=> manage.py createsuperuser
+		=> It will displays a local machine name if it is ok then we need to click on enter if we need to change then have to mention a username for admin login
+		=> After entering username it displays email if need to mention then we can if not we can skip by clicking on enter
+		=> Then entering the email then we need to enter password and confirm password if they set then it displays an info to accept the password validation just we need to mention the "y"
+		=> If we clikc "y" then the info is displayed in command prompt as "successfully superuser created"
+	- If the admin is created then we can login by using default admin panel so we need to use the admin url and have to mention the username and password created in command prompt
+	- Here all the tables and permissions are to be set by admin to a user for a particular table
+
+
+	Existing Models and Form Class:
+	===============================
+	- After creating the models then we need to create the form by using exisiting table to login.
+	- In forms we can restrict the field names,bootstrap control and preferences for a field
+	- To access the existing form class to create user then we need to create a file names as "forms.py" in userapp
+	- The class name of forms can be imported as 
+		=> from django.contrib.auth.forms import UserCreationForm
+	- To insert the values into a user model then we need to import user model class such as 
+		=> from django.contrib.auth.models import User
+	- We need to create another classname in forms to access the particular fieldnames in user registration page
+	- To access the field names first step is to be access the model name such as
+		=> model = User
+	- field names can be restricted by using fields name
+		fields = "__all__" => To display all data in a selected table
+		fields = ["selected filenames",etc.,]
+	- To display the field names we need to import in views with classname and to redirect those in .html file
+	- To access bootstrap styling we need to use widgets such as
+		=> 
+			widgets = {
+			"fieldname":forms.TextInput(attrs={
+			"class":"form-control",
+			"placeholder":"some text",
+			}),
+			...............
+			...............
+			...............
+			}
+	- For Password field exists in user model widget concept shpuldnt be coded in widgets. we need to mention before the class Meta in forms.py such as 
+		class classname(UserCreationForm):
+			password1 = forms.CharField(widget=forms.PasswordInput(attrs={
+			"class":"form-control",
+			"placeholder":"some text",
+			}))
+	- In widgets we need to use "Input" for all the fieldnames then the data for that field can be stored into table
+
+
+	Messages Concept:
+	=================
+	- To display the message in browser like an alert we need to use the message concept
+	- For accessing the messages then we need to import the message from 
+		=> from django.contrib import messages
+	- These message had some tag names to display the color combinations in html so we need to send the data in the format of
+		=> messages.tagname(self,"something text")
+		This message can be used after saving a record or deleting the record with some data confirmation
+	- The message can be displayed in a particular file in that we need to check whether the message is existing for .html file
+		=> {% if messages %}
+			{% for variablename in messages %}
+				{{variablename}}
+			{% endfor %}
+			{% endif %}
+
+	
